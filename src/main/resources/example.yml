@@ -1,0 +1,36 @@
+# YAML is used to describe data structures
+# YAML is very space-sensitive
+
+name: Wendy
+names: # Comment
+    - John
+    - Paul
+    - Ringo
+
+pound_sign: "#"
+
+book:
+  author: Joe Buck
+  publisher: Random House
+
+# Boolean. All these evaluate to true
+truth: yes
+another_truth: True
+more_true: true
+
+# All these evaluate to false
+false: no #No, false, FALSE
+
+# Escaping
+string_val: "it's me" # YAML doesn't like single-quotes. Wrap whole thing in double quotes
+colon_string: "my courses: math, science"
+
+# New lines
+include_new_lines: |
+  asdf asdf
+  asdf asdf
+  asdf asdf
+
+ignore_new_lines: >
+  this will be one
+  long string
