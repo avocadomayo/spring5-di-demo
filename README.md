@@ -52,6 +52,7 @@ To declare a Bean scope,
 No declaration needed for Singleton scope.
 
 ### External Configuration
-[Hierarchy of who overrides what](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
-
-
+- [Hierarchy of who overrides what](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
+- Able to create profile-specific config files, by naming them ```application-<profile name>.properties```.
+    - Eg. ```application-de.properties``` for this code demo
+    
