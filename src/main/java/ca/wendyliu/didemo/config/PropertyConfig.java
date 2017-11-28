@@ -12,20 +12,10 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 /**
- * Set up external properties.
- * Use @PropertySource to indicate path to external properties.
+ * Spring Boot Applications .properties is automatically brought in so we don't need @PropertySource.
  */
 @Configuration
-@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-// Alternative annotation
-/*@PropertySources({
-        @PropertySource("classpath:jms.properties"),
-        @PropertySource("classpath:datasource.properties")
-})*/
 public class PropertyConfig {
-
-    @Autowired
-    Environment env;
 
     @Value("${guru.username}")
     String user;
@@ -48,8 +38,6 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        // Get it from environment
-        // fakeDataSource.setUser(env.getProperty("USERNAME"));
         fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
@@ -65,13 +53,5 @@ public class PropertyConfig {
         fakeJmsBroker.setUrl(jmsUrl);
 
         return fakeJmsBroker;
-    }
-
-    /** This thing reads the .properties file, matches up the values, and enables the @Value annotation for us. */
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer =
-                new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
     }
 }
