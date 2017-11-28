@@ -50,3 +50,8 @@ To declare a Bean scope,
 - In XML, ```scope``` is an XML attribute of ```<bean>```
 
 No declaration needed for Singleton scope.
+
+### External Configuration
+[Hierarchy of who overrides what](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
+
+
