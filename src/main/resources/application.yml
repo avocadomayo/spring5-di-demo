@@ -1,0 +1,7 @@
+# Spring reads properties in application.properties and application.yml
+
+guru:
+  jms:
+    username: JSMUsername
+    password: password
+    url: someURL
